@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <script>
+        jQuery(document).ready(function($){
+            $('.radio-checkbox--hidden').click(function(){
+                let filterGroup = $(this).parents('.filter-group')
+                let checked = filterGroup.find('.radio-checkbox--hidden:checked')
+                console.log(checked.length)
+                if(checked.length) {
+                    filterGroup.find('.reset').show()
+                } else {
+                    filterGroup.find('.reset').hide()
+                }
+            })
+        })
+    </script>
+    <div class="filter-grid">
+        <div class="filter-group">
+            <div class="filter-title">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.62439 14.083C5.46339 14.0838 5.3335 14.2145 5.3335 14.3755C5.3335 14.5365 5.46416 14.6663 5.62516 14.6663C5.78616 14.6663 5.91683 14.5357 5.91683 14.3747C5.91683 14.2137 5.78616 14.083 5.62439 14.083Z" stroke="#020304" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5.72222 17C4.21878 17 3 15.7812 3 14.2778V4.55556C3 3.69611 3.69611 3 4.55556 3H6.88889C7.74833 3 8.44444 3.69611 8.44444 4.55556V14.2778C8.44444 15.7812 7.22567 17 5.72222 17Z" stroke="#020304" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M7.64746 16.2025L15.2005 8.64953C15.8079 8.04209 15.8079 7.05742 15.2005 6.44998L13.5508 4.80031C12.9433 4.19287 11.9587 4.19287 11.3512 4.80031L8.44468 7.70531" stroke="#020304" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12.2944 11.5557H15.4444C16.3038 11.5557 16.9999 12.2518 16.9999 13.1112V15.4446C16.9999 16.304 16.3038 17.0001 15.4444 17.0001H5.72217" stroke="#020304" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                <span>Цвет</span>
+                <span class="reset">Сбросить</span>
+            </div>
+            <label class="filter-item">
+                <input type="checkbox" class="radio-checkbox--hidden" name="color" value="white">
+                <span class="check-style"></span>
+                <span class="color-circle color-circle--white"></span>
+                <span class="label-title">Белый</span>
+            </label>
+            <label class="filter-item">
+                <input type="checkbox" class="radio-checkbox--hidden" name="color" value="black">
+                <span class="check-style"></span>
+                <span class="color-circle color-circle--black"></span>
+                <span class="label-title">Черный</span>
+            </label>
+            <label class="filter-item">
+                <input type="checkbox" class="radio-checkbox--hidden" name="color" value="red">
+                <span class="check-style"></span>
+                <span class="color-circle color-circle--red"></span>
+                <span class="label-title">Красный</span>
+            </label>
+            <label class="filter-item">
+                <input type="checkbox" class="radio-checkbox--hidden" name="color" value="blue">
+                <span class="check-style"></span>
+                <span class="color-circle color-circle--blue"></span>
+                <span class="label-title">Синий</span>
+            </label>
+            <label class="filter-item">
+                <input type="checkbox" class="radio-checkbox--hidden" name="color" value="green">
+                <span class="check-style"></span>
+                <span class="color-circle color-circle--green"></span>
+                <span class="label-title">Зеленый</span>
+            </label>
+            <label class="filter-item">
+                <input type="checkbox" class="radio-checkbox--hidden" name="color" value="begie">
+                <span class="check-style"></span>
+                <span class="color-circle color-circle--begie"></span>
+                <span class="label-title">Бежевый</span>
+            </label>
+            <label class="filter-item">
+                <input type="checkbox" class="radio-checkbox--hidden" name="color" value="burgundy">
+                <span class="check-style"></span>
+                <span class="color-circle color-circle--burgundy"></span>
+                <span class="label-title">Бордовый</span>
+            </label>
+        </div>
+        <div class="filter-group">
+            <div class="filter-title">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 3L8 8M3 3V6M3 3H6" stroke="#020304"/>
+                    <path d="M3 17L8 12M3 17V14M3 17H6" stroke="#020304"/>
+                    <path d="M17 3L12 8M17 3V6M17 3H14" stroke="#020304"/>
+                    <path d="M17 17L12 12M17 17V14M17 17H14" stroke="#020304"/>
+                    </svg>
+                <span>Размеры</span>
+                <span class="reset">Сбросить</span>
+            </div>
+            <label class="filter-item-dimentions">
+                <div class="label-title-dimentions">Ширина, см</div>
+                <div class="input-text-container">
+                    <input type="number" class="input-text" placeholder="от ХХ">
+                    <input type="number" class="input-text" placeholder="до ХХ">
+                </div>
+            </label>
+            <label class="filter-item-dimentions">
+                <div class="label-title-dimentions">Глубина, см</div>
+                <div class="input-text-container">
+                    <input type="number" class="input-text" placeholder="от ХХ">
+                    <input type="number" class="input-text" placeholder="до ХХ">
+                </div>
+            </label>
+            <label class="filter-item-dimentions">
+                <div class="label-title-dimentions">Высота, см</div>
+                <div class="input-text-container">
+                    <input type="number" class="input-text" placeholder="от ХХ">
+                    <input type="number" class="input-text" placeholder="до ХХ">
+                </div>
+            </label>
+        </div>
+        <div class="filter-group">
+            <div class="filter-title">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 10.2719L7.49437 15L17 5" stroke="#020304" stroke-linejoin="round"/>
+                    </svg>                    
+                <span>Наличие</span>    
+            </div>
+            <label class="filter-item">
+                <input type="radio" class="radio-checkbox--hidden" name="stock">
+                <span class="check-style radio"></span>
+                <span class="label-title">Показать всё</span>
+            </label>
+            <label class="filter-item">
+                <input type="radio" class="radio-checkbox--hidden" name="stock">
+                <span class="check-style radio"></span>
+                <span class="label-title">В шоуруме (Москва)</span>
+            </label>
+            <label class="filter-item">
+                <input type="radio" class="radio-checkbox--hidden" name="stock">
+                <span class="check-style radio"></span>
+                <span class="label-title">В шоуруме (С.-Петербург)</span>
+            </label>
+            <label class="filter-item">
+                <input type="radio" class="radio-checkbox--hidden" name="stock">
+                <span class="check-style radio"></span>
+                <span class="label-title">На складе</span>
+            </label>
+            <label class="filter-item">
+                <input type="radio" class="radio-checkbox--hidden" name="stock">
+                <span class="check-style radio"></span>
+                <span class="label-title">Ожидается</span>
+            </label>
+        </div>
+        <div class="filter-group">
+            <div class="filter-title">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="5" cy="10" r="1" stroke="#020304"/>
+                    <circle cx="10" cy="10" r="1" stroke="#020304"/>
+                    <circle cx="15" cy="10" r="1" stroke="#020304"/>
+                    </svg>                    
+                <span>Другое</span>
+                <span class="reset">Сбросить</span>
+            </div>
+            <label class="filter-item">
+                <input type="checkbox" class="radio-checkbox--hidden" name="color" value="white">
+                <span class="check-style"></span>
+                <span class="label-title">Новинки</span>
+            </label>
+            <label class="filter-item">
+                <input type="checkbox" class="radio-checkbox--hidden" name="color" value="black">
+                <span class="check-style"></span>
+                <span class="label-title">Скидки</span>
+            </label>
+            <label class="filter-item">
+                <input type="checkbox" class="radio-checkbox--hidden" name="color" value="red">
+                <span class="check-style"></span>
+                <span class="label-title">Есть 3D модель</span>
+            </label>
+        </div>
+        <div class="filter-group">
+            <div class="filter-title">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3.84502 3.84507C3.84502 3.84507 6.69706 1.94367 10.5 3.84507C14.3029 5.74647 17.1549 3.84507 17.1549 3.84507C17.1549 3.84507 19.0564 6.69718 17.1549 10.5C15.2534 14.3028 17.1549 17.1549 17.1549 17.1549C17.1549 17.1549 14.3029 19.0563 10.5 17.1549C6.69703 15.2535 3.84502 17.1549 3.84502 17.1549C3.84502 17.1549 1.94372 14.3028 3.84502 10.5C5.74632 6.69719 3.84502 3.84507 3.84502 3.84507Z" stroke="#020304"/>
+                    <circle cx="8.5" cy="8.5" r="0.5" stroke="#020304"/>
+                    <circle cx="12.5" cy="8.5" r="0.5" stroke="#020304"/>
+                    <circle cx="8.5" cy="12.5" r="0.5" stroke="#020304"/>
+                    <circle cx="12.5" cy="12.5" r="0.5" stroke="#020304"/>
+                    </svg>                    
+                <span>Материал Обивки</span>
+                <span class="reset">Сбросить</span>
+            </div>
+            <label class="filter-item">
+                <input type="checkbox" class="radio-checkbox--hidden">
+                <span class="check-style"></span>
+                <span class="label-title">Кожа</span>
+            </label>
+            <label class="filter-item">
+                <input type="checkbox" class="radio-checkbox--hidden">
+                <span class="check-style"></span>
+                <span class="label-title">Бархат</span>
+            </label>
+            <label class="filter-item">
+                <input type="checkbox" class="radio-checkbox--hidden">
+                <span class="check-style"></span>
+                <span class="label-title">Ткань</span>
+            </label>
+            <label class="filter-item">
+                <input type="checkbox" class="radio-checkbox--hidden">
+                <span class="check-style"></span>
+                <span class="label-title">Букле</span>
+            </label>
+            <label class="filter-item">
+                <input type="checkbox" class="radio-checkbox--hidden">
+                <span class="check-style"></span>
+                <span class="label-title">Велюр</span>
+            </label>
+            <label class="filter-item">
+                <input type="checkbox" class="radio-checkbox--hidden">
+                <span class="check-style"></span>
+                <span class="label-title">Жаккард</span>
+            </label>
+        </div>
+    </div>
+</body>
+</html>
